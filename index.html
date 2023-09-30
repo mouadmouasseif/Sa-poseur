@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>SA-POSEUR</title>
+    <meta name="description" content="SA POSEUR est spécialisée dans la rénovation : 
+    cuisines, salles de bain, parquet, fenêtres, stores, moustiquaires, volets, portails, dressing, armoires, portes, menuiseries Bois / PVC .">
+
 <!--
 
 
@@ -17,7 +20,9 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>                       <!-- http://kenwheeler.github.io/slick/ -->
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">                               <!-- Templatemo style -->
-
+     <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="img/logo(3).png"/>
+      
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
     
 </head>
@@ -216,16 +221,106 @@
                     </div>
                 </div>                
             </div>
-            <a href="https://api.whatsapp.com/send?phone=33667344402" target="_blank">
-                <button class="whatsapp-button">WhatsApp</button>
-            </a>
+            <script src="js/jquery.js"></script>
+   
+            <!-- Menu Js -->
+            <script src="js/materialMenu.js"></script>
+            <script>
+              var menu = new Menu;
+            </script>
+            
+            <script>
+                var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?6681';
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = url;
+                var options = {
+              "enabled":true,
+              "chatButtonSetting":{
+                  "backgroundColor":"#4dc247",
+                  "ctaText":"",
+                  "borderRadius":"25",
+                  "marginLeft":"0",
+                  "marginBottom":"20",
+                  "marginRight":"20",
+                  "position":"right"
+              },
+              "brandSetting":{
+                  "brandName":"SA-Poseur",
+                  "brandSubTitle":"en ligne",
+                  "brandImg":"",
+                  "welcomeText":"Bienvenue chez nous\nComment On peut vous Aider ?",
+                  "messageText":"I'm interessed white {{page_link}}",
+                  "backgroundColor":"#0a5f54",
+                  "ctaText":"Start Chat",
+                  "borderRadius":"25",
+                  "autoShow":true,
+                  "phoneNumber":"33667344402"
+              }
+            };
+                s.onload = function() {
+                    CreateWhatsappChatWidget(options);
+                };
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            </script>
         
-            <!-- Bouton Instagram -->
-            <a href="https://www.instagram.com/sa_poseur83/" target="_blank">
-                <button class="instagram-button">Instagram</button>
-            </a>
+            <script src="js/jquery-3.6.0.min.js"></script>
+            <script src="js/parallax.min.js"></script>
+            <script src="js/jquery.singlePageNav.min.js"></script>
+            <script>
+        
+                function checkAndShowHideMenu() {
+                    if(window.innerWidth < 768) {
+                        $('#tm-nav ul').addClass('hidden');                
+                    } else {
+                        $('#tm-nav ul').removeClass('hidden');
+                    }
+                }
+        
+                $(function(){
+                    var tmNav = $('#tm-nav');
+                    tmNav.singlePageNav();
+        
+                    checkAndShowHideMenu();
+                    window.addEventListener('resize', checkAndShowHideMenu);
+        
+                    $('#menu-toggle').click(function(){
+                        $('#tm-nav ul').toggleClass('hidden');
+                    });
+        
+                    $('#tm-nav ul li').click(function(){
+                        if(window.innerWidth < 768) {
+                            $('#tm-nav ul').addClass('hidden');
+                        }                
+                    });
+        
+                    $(document).scroll(function() {
+                        var distanceFromTop = $(document).scrollTop();
+        
+                        if(distanceFromTop > 100) {
+                            tmNav.addClass('scroll');
+                        } else {
+                            tmNav.removeClass('scroll');
+                        }
+                    });
+                    
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+        
+                            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        });
+                    });
+                });
+            </script>
+        
+            
             <footer>
-                <p class="small tm-copyright-text">Copyright &copy; <span class="tm-current-year">2023</span> Design by:
+                <p class="small tm-copyright-text"> Design by:
                 
                  <a rel="nofollow" href="https://www.instagram.com/mouadmouasseif/" class="tm-text-highlight"><img src="img/m.png" alt="Logo de SA-POSEUR" class="img-fluid mb-4" id="logo1">ouasseif</a></p>
             </footer>
